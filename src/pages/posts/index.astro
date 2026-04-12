@@ -1,0 +1,40 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const allPosts = await getCollection('posts', ({ data }) => !data.draft);
+const posts = allPosts.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+
+function formatDate(date: Date) {
+  return date.toLocaleDateString('it-IT', {
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+  });
+}
+---
+
+<BaseLayout title="Posts — edoardo ferrini" description="Tutti gli articoli del blog">
+  <div class="page-header">
+    <h1>Posts</h1>
+    <p>{posts.length} articoli</p>
+  </div>
+
+  <ul class="post-list">
+    {posts.map((post) => (
+      <li class="post-item">
+        <div>
+          <a href={`/posts/${post.id}`}>{post.data.title}</a>
+          {post.data.tags.length > 0 && (
+            <div class="post-tags">
+              {post.data.tags.map((tag) => (
+                <a href={`/tags/${tag}`} class="post-tag">#{tag}</a>
+              ))}
+            </div>
+          )}
+        </div>
+        <span class="post-date">{formatDate(post.data.date)}</span>
+      </li>
+    ))}
+  </ul>
+</BaseLayout>

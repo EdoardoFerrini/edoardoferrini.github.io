@@ -1,0 +1,35 @@
+---
+import BaseLayout from './BaseLayout.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+  date: Date;
+  tags?: string[];
+}
+
+const { title, description, date, tags = [] } = Astro.props;
+
+const formattedDate = date.toLocaleDateString('it-IT', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+---
+
+<BaseLayout title={`${title} — edoardo ferrini`} description={description}>
+  <article class="prose">
+    <h1>{title}</h1>
+    <div class="post-meta">
+      <time datetime={date.toISOString()}>{formattedDate}</time>
+      {tags.length > 0 && (
+        <div class="post-tags">
+          {tags.map((tag) => (
+            <a href={`/tags/${tag}`} class="post-tag">#{tag}</a>
+          ))}
+        </div>
+      )}
+    </div>
+    <slot />
+  </article>
+</BaseLayout>

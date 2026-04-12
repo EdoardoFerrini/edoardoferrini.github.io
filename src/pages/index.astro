@@ -1,0 +1,45 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const allPosts = await getCollection('posts', ({ data }) => !data.draft);
+const posts = allPosts
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+  .slice(0, 5);
+
+function formatDate(date: Date) {
+  return date.toLocaleDateString('it-IT', {
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+  });
+}
+---
+
+<BaseLayout title="edoardo ferrini">
+  <div class="home-intro">
+    <h1>Ciao, sono Edoardo.</h1>
+    <p>
+      Sviluppatore, appassionato di knowledge management e fotografia.
+      Qui scrivo di programmazione, produttività e tutto quello che trovo interessante.
+    </p>
+    <p>
+      Esplora anche il mio <a href="https://edoardoferrini.github.io/brain/" target="_blank" rel="noopener">digital garden</a> — uno spazio più caotico e connesso.
+    </p>
+  </div>
+
+  <section>
+    <div class="section-header">
+      <h2>Ultimi post</h2>
+      <a href="/posts" class="view-all">Tutti i post →</a>
+    </div>
+    <ul class="post-list">
+      {posts.map((post) => (
+        <li class="post-item">
+          <a href={`/posts/${post.id}`}>{post.data.title}</a>
+          <span class="post-date">{formatDate(post.data.date)}</span>
+        </li>
+      ))}
+    </ul>
+  </section>
+</BaseLayout>
