@@ -14,20 +14,21 @@ function formatDate(date: Date) {
 }
 ---
 
-<BaseLayout title="Posts — edoardo ferrini" description="Tutti gli articoli del blog">
+<BaseLayout title="Posts — edoardo ferrini" description="Tutti gli articoli del blog di Edoardo Ferrini.">
+
   <div class="page-header">
     <h1>Posts</h1>
-    <p>{posts.length} articoli</p>
+    <p>{posts.length} {posts.length === 1 ? 'articolo' : 'articoli'}</p>
   </div>
 
   <ul class="post-list">
     {posts.map((post) => (
       <li class="post-item">
-        <div>
+        <div class="post-item-main">
           <a href={`/posts/${post.id}`}>{post.data.title}</a>
-          {post.data.tags.length > 0 && (
+          {post.data.tags && post.data.tags.length > 0 && (
             <div class="post-tags">
-              {post.data.tags.map((tag) => (
+              {post.data.tags.map((tag: string) => (
                 <a href={`/tags/${tag}`} class="post-tag">#{tag}</a>
               ))}
             </div>
@@ -37,4 +38,5 @@ function formatDate(date: Date) {
       </li>
     ))}
   </ul>
+
 </BaseLayout>

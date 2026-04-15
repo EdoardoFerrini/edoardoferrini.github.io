@@ -16,30 +16,68 @@ function formatDate(date: Date) {
 }
 ---
 
-<BaseLayout title="edoardo ferrini">
-  <div class="home-intro">
-    <h1>Ciao, sono Edoardo.</h1>
-    <p>
-      Sviluppatore, appassionato di knowledge management e fotografia.
-      Qui scrivo di programmazione, produttività e tutto quello che trovo interessante.
-    </p>
-    <p>
-      Esplora anche il mio <a href="https://edoardoferrini.github.io/brain/" target="_blank" rel="noopener">digital garden</a> — uno spazio più caotico e connesso.
+<BaseLayout title="edoardo ferrini — Build To Understand" description="Blog di Edoardo Ferrini: programmazione, knowledge management e fotografia.">
+
+  <!-- Hero -->
+  <div class="home-hero">
+    <h1>Build To Understand</h1>
+    <p class="hero-subtitle">Programmare. Pensare. Documentare.</p>
+    <p class="hero-desc">
+      Questo è il mio blog: articoli su programmazione, produttività e knowledge management.
+      Per esplorazioni più libere e connesse visita il mio
+      <a href="https://edoardoferrini.github.io/brain/" target="_blank" rel="noopener">digital garden</a>.
     </p>
   </div>
 
+  <!-- Feature cards — NAVIGAZIONE block like Quartz -->
+  <div class="home-nav-label">NAVIGAZIONE</div>
+  <div class="feature-cards">
+    <a href="/posts" class="feature-card">
+      <span class="feature-card-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+      </span>
+      <span class="feature-card-title">Posts</span>
+      <span class="feature-card-desc">Leggi tutti gli articoli, ordinati per data.</span>
+    </a>
+    <a href="https://edoardoferrini.github.io/brain/" target="_blank" rel="noopener" class="feature-card">
+      <span class="feature-card-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/><path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/><path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4"/><path d="M17.599 6.5a3 3 0 0 0 .399-1.375"/><path d="M6.003 5.125A3 3 0 0 0 6.401 6.5"/><path d="M3.477 10.896a4 4 0 0 1 .585-.396"/><path d="M19.938 10.5a4 4 0 0 1 .585.396"/><path d="M6 18a4 4 0 0 1-1.967-.516"/><path d="M19.967 17.484A4 4 0 0 1 18 18"/></svg>
+      </span>
+      <span class="feature-card-title">Second Brain</span>
+      <span class="feature-card-desc">Esplora il digital garden: note connesse e in continua evoluzione.</span>
+    </a>
+    <a href="/about" class="feature-card">
+      <span class="feature-card-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      </span>
+      <span class="feature-card-title">About</span>
+      <span class="feature-card-desc">Chi sono, cosa faccio e come mi trovi online.</span>
+    </a>
+  </div>
+
+  <!-- Recent posts -->
   <section>
     <div class="section-header">
-      <h2>Ultimi post</h2>
+      <h2>Ultimi Post</h2>
       <a href="/posts" class="view-all">Tutti i post →</a>
     </div>
     <ul class="post-list">
       {posts.map((post) => (
         <li class="post-item">
-          <a href={`/posts/${post.id}`}>{post.data.title}</a>
+          <div class="post-item-main">
+            <a href={`/posts/${post.id}`}>{post.data.title}</a>
+            {post.data.tags && post.data.tags.length > 0 && (
+              <div class="post-tags">
+                {post.data.tags.map((tag: string) => (
+                  <a href={`/tags/${tag}`} class="post-tag">#{tag}</a>
+                ))}
+              </div>
+            )}
+          </div>
           <span class="post-date">{formatDate(post.data.date)}</span>
         </li>
       ))}
     </ul>
   </section>
+
 </BaseLayout>

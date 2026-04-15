@@ -6,26 +6,37 @@ interface Props {
   description?: string;
 }
 
-const { title, description = 'Il mio blog personale' } = Astro.props;
+const { title, description = 'Il blog di Edoardo Ferrini' } = Astro.props;
 const currentPath = Astro.url.pathname;
 
+// Nav: logo brings home, Posts/About are internal, Brain links out to Quartz
 const navLinks = [
   {
     href: '/posts',
-    label: 'Blog',
-    svg: `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>`,
+    label: 'Posts',
+    external: false,
+    svg: `<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>`,
   },
   {
-    href: '/tags',
-    label: 'Tags',
-    svg: `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>`,
+    href: 'https://edoardoferrini.github.io/brain/',
+    label: 'Brain',
+    external: true,
+    svg: `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/><path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/><path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4"/><path d="M17.599 6.5a3 3 0 0 0 .399-1.375"/><path d="M6.003 5.125A3 3 0 0 0 6.401 6.5"/><path d="M3.477 10.896a4 4 0 0 1 .585-.396"/><path d="M19.938 10.5a4 4 0 0 1 .585.396"/><path d="M6 18a4 4 0 0 1-1.967-.516"/><path d="M19.967 17.484A4 4 0 0 1 18 18"/></svg>`,
   },
   {
     href: '/about',
     label: 'About',
-    svg: `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>`,
+    external: false,
+    svg: `<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>`,
   },
 ];
+
+// Active check: /posts matches /posts and /posts/any-slug
+function isActive(href: string, path: string, external: boolean) {
+  if (external) return false;
+  if (href === '/') return path === '/';
+  return path === href || path.startsWith(href + '/');
+}
 ---
 
 <!doctype html>
@@ -35,45 +46,63 @@ const navLinks = [
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
     <title>{title}</title>
-    <!-- IBM Plex Mono -->
+    <!-- IBM Plex Mono — same as Quartz config typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap"
       rel="stylesheet"
     />
-    <!-- Anti-flash: applica tema salvato prima del paint -->
+    <!-- Anti-flash: apply saved theme before paint -->
     <script is:inline>
       (function () {
         const saved = localStorage.getItem('theme');
         const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
         const theme = saved ?? (prefersDark ? 'dark' : 'light');
         document.documentElement.setAttribute('data-theme', theme);
+        document.documentElement.setAttribute('saved-theme', theme);
       })();
     </script>
   </head>
   <body>
+    <!-- ════════════════════════════════
+         HEADER — mirrors Quartz .page-header
+         ════════════════════════════════ -->
     <header>
       <nav class="nav-inner" aria-label="Navigazione principale">
 
-        <!-- Logo: avatar 16-bit -->
+        <!-- Logo: feather icon + site name -->
         <a href="/" class="brain-logo" aria-label="Home">
-          <img
-            src="/avatar.svg"
-            alt="Edoardo Ferrini"
-            class="navbar-avatar"
-            width="36"
-            height="36"
-          />
+          <svg
+            class="site-logo-icon"
+            width="22"
+            height="22"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.75"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+          >
+            <path d="M12 19l7-7 3 3-7 7-3-3z" />
+            <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z" />
+            <path d="M2 2l7.586 7.586" />
+            <circle cx="11" cy="11" r="2" />
+          </svg>
+          <span class="site-logo-text">Build To Understand</span>
         </a>
 
-        <!-- Link navigazione con icone -->
+        <!-- Nav links — mirrors LinksHeader.tsx -->
         <div class="links-header">
-          {navLinks.map(({ href, label, svg }) => (
+          {navLinks.map(({ href, label, svg, external }) => (
             <a
               href={href}
               class="nav-item-link"
-              aria-current={currentPath.startsWith(href) ? 'page' : undefined}
+              aria-current={isActive(href, currentPath, external) ? 'page' : undefined}
+              target={external ? '_blank' : undefined}
+              rel={external ? 'noopener noreferrer' : undefined}
             >
               <span class="nav-item-icon" set:html={svg} aria-hidden="true" />
               <span class="nav-item-label">{label}</span>
@@ -84,20 +113,10 @@ const navLinks = [
         <!-- Spacer -->
         <div class="nav-spacer" aria-hidden="true"></div>
 
-        <!-- Destra: Search + Toggle tema -->
+        <!-- Right: Dark mode toggle -->
         <div class="nav-right">
-          <button class="search-btn" aria-label="Cerca" title="Cerca (Ctrl+K)" id="search-button">
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <circle cx="11" cy="11" r="8"/>
-              <line x1="21" y1="21" x2="16.65" y2="16.65"/>
-            </svg>
-            <span class="search-label">Search</span>
-            <kbd class="search-shortcut">Ctrl+K</kbd>
-          </button>
-
+          <!-- Darkmode button — mirrors Quartz Darkmode.tsx -->
           <button id="theme-toggle" class="darkmode" aria-label="Cambia tema">
-            <!-- Sole: visibile in dark mode -->
             <svg id="icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"
               fill="none" stroke="currentColor" stroke-width="2"
               stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -111,7 +130,6 @@ const navLinks = [
               <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
               <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
             </svg>
-            <!-- Luna: visibile in light mode -->
             <svg id="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"
               fill="none" stroke="currentColor" stroke-width="2"
               stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -129,13 +147,15 @@ const navLinks = [
       </div>
     </main>
 
+    <!-- Footer — mirrors Quartz Footer.tsx structure -->
     <footer>
       <div class="container">
         <div class="footer-inner">
           <span>© {new Date().getFullYear()} Edoardo Ferrini</span>
           <div class="footer-links">
-            <a href="https://edoardoferrini.github.io/brain/" target="_blank" rel="noopener">Digital Garden</a>
-            <a href="/rss.xml">RSS</a>
+            <a href="https://edoardoferrini.github.io/brain/" target="_blank" rel="noopener">Second Brain</a>
+            <a href="/posts">Posts</a>
+            <a href="/about">About</a>
           </div>
         </div>
       </div>
@@ -158,6 +178,7 @@ const navLinks = [
       toggle.addEventListener('click', () => {
         const next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
         root.setAttribute('data-theme', next);
+        root.setAttribute('saved-theme', next);
         localStorage.setItem('theme', next);
         updateIcons();
       });
