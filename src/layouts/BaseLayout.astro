@@ -20,7 +20,7 @@ const navLinks = [
   {
     href: 'https://edoardoferrini.github.io/brain/',
     label: 'Brain',
-    external: true,
+    external: false,
     svg: `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/><path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/><path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4"/><path d="M17.599 6.5a3 3 0 0 0 .399-1.375"/><path d="M6.003 5.125A3 3 0 0 0 6.401 6.5"/><path d="M3.477 10.896a4 4 0 0 1 .585-.396"/><path d="M19.938 10.5a4 4 0 0 1 .585.396"/><path d="M6 18a4 4 0 0 1-1.967-.516"/><path d="M19.967 17.484A4 4 0 0 1 18 18"/></svg>`,
   },
   {
@@ -96,13 +96,11 @@ function isActive(href: string, path: string, external: boolean) {
 
         <!-- Nav links — mirrors LinksHeader.tsx -->
         <div class="links-header">
-          {navLinks.map(({ href, label, svg, external }) => (
+          {navLinks.map(({ href, label, svg }) => (
             <a
               href={href}
               class="nav-item-link"
-              aria-current={isActive(href, currentPath, external) ? 'page' : undefined}
-              target={external ? '_blank' : undefined}
-              rel={external ? 'noopener noreferrer' : undefined}
+              aria-current={isActive(href, currentPath, false) ? 'page' : undefined}
             >
               <span class="nav-item-icon" set:html={svg} aria-hidden="true" />
               <span class="nav-item-label">{label}</span>
@@ -153,7 +151,7 @@ function isActive(href: string, path: string, external: boolean) {
         <div class="footer-inner">
           <span>© {new Date().getFullYear()} Edoardo Ferrini</span>
           <div class="footer-links">
-            <a href="https://edoardoferrini.github.io/brain/" target="_blank" rel="noopener">Second Brain</a>
+            <a href="https://edoardoferrini.github.io/brain/">Second Brain</a>
             <a href="/posts">Posts</a>
             <a href="/about">About</a>
           </div>
