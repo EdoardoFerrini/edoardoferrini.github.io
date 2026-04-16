@@ -1,0 +1,74 @@
+---
+title: "Astro è il framework giusto per un blog"
+description: "Perché ho scelto Astro per costruire questo blog e i vantaggi che ho riscontrato."
+date: 2026-01-10
+tags: ["astro", "programmazione", "web"]
+---
+
+Ho provato Jekyll, Hugo, Next.js e altri. Alla fine sono tornato ad **Astro**.
+
+<Callout type="info" title="Perché Astro?">
+  Astro è progettato per siti **content-first**: zero JavaScript nel browser
+  per default, pagine veloci senza configurazione aggiuntiva.
+</Callout>
+
+## Come funziona l'architettura
+
+<Diagram title="Architettura Astro" height={280} caption="Build pipeline: sorgenti → HTML statico + isole JS">
+  {/* Freccia centrale */}
+  <line x1="240" y1="140" x2="320" y2="140" stroke="#727169" stroke-width="2" stroke-dasharray="6,3"/>
+  <line x1="460" y1="140" x2="540" y2="140" stroke="#727169" stroke-width="2" stroke-dasharray="6,3"/>
+
+  {/* Box sinistra: Sorgenti */}
+  <rect x="50" y="80" width="180" height="120" rx="8" fill="#2A2A37" stroke="#3D3D4F" stroke-width="1"/>
+  <text x="140" y="108" text-anchor="middle" fill="#DCD7BA" font-size="13" font-weight="bold" font-family="monospace">.astro / .mdx</text>
+  <text x="140" y="130" text-anchor="middle" fill="#727169" font-size="12" font-family="monospace">sorgenti</text>
+  <rect x="70" y="145" width="140" height="22" rx="4" fill="#FF5D62" opacity="0.2"/>
+  <text x="140" y="160" text-anchor="middle" fill="#FF5D62" font-size="11" font-family="monospace">Markdown + Components</text>
+
+  {/* Box centro: Build */}
+  <rect x="320" y="100" width="140" height="80" rx="8" fill="#2A2A37" stroke="#FF5D62" stroke-width="1"/>
+  <text x="390" y="132" text-anchor="middle" fill="#DCD7BA" font-size="13" font-weight="bold" font-family="monospace">astro build</text>
+  <text x="390" y="153" text-anchor="middle" fill="#727169" font-size="11" font-family="monospace">SSG / SSR</text>
+
+  {/* Box destra: Output */}
+  <rect x="550" y="80" width="180" height="120" rx="8" fill="#2A2A37" stroke="#3D3D4F" stroke-width="1"/>
+  <text x="640" y="108" text-anchor="middle" fill="#DCD7BA" font-size="13" font-weight="bold" font-family="monospace">dist/</text>
+  <text x="640" y="130" text-anchor="middle" fill="#727169" font-size="12" font-family="monospace">output</text>
+  <rect x="570" y="145" width="140" height="22" rx="4" fill="#68D391" opacity="0.15"/>
+  <text x="640" y="160" text-anchor="middle" fill="#68D391" font-size="11" font-family="monospace">HTML + Islands JS</text>
+</Diagram>
+
+## Cosa mi piace
+
+**Islands architecture.** Puoi aggiungere componenti interattivi (React, Vue, Svelte) solo dove servono. Il resto è HTML statico.
+
+**Content Collections.** Type-safe, con schema Zod, validazione automatica.
+
+<Callout type="tip" title="Islands in pratica">
+  Aggiungi `client:load` a un componente React solo se ha davvero bisogno
+  di interattività. Il resto rimane HTML morto — e la pagina vola.
+</Callout>
+
+## Come iniziare
+
+<Steps>
+  <li>Crea il progetto con `npm create astro@latest`</li>
+  <li>Aggiungi l'integrazione MDX con `npx astro add mdx`</li>
+  <li>Crea i tuoi componenti in `src/components/`</li>
+  <li>Scrivili nei post `.mdx` senza nessun import aggiuntivo</li>
+</Steps>
+
+<Callout type="warning" title="Attenzione ai .md esistenti">
+  Se rinomini un post da `.md` a `.mdx`, elimina il file `.md` originale —
+  avere entrambi causa un conflitto di ID nella content collection.
+</Callout>
+
+## Conclusione
+
+Se scrivi un blog nel 2026, Astro è probabilmente la scelta più sensata. Veloce, flessibile, con un ottimo DX.
+
+<Callout type="note">
+  Questo post è scritto in `.mdx` e usa i componenti `Callout`, `Diagram` e
+  `Steps` — tutti disponibili automaticamente in ogni post del blog.
+</Callout>

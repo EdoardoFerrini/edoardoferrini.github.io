@@ -1,0 +1,83 @@
+---
+/**
+ * Diagram — SVG diagram card, exactly like alexop.dev's rect-based diagrams.
+ * Use inside MDX posts:
+ *
+ *   <Diagram title="System Architecture" height={340}>
+ *     <text ...>your SVG elements here</text>
+ *   </Diagram>
+ *
+ * The outer card <rect> is provided automatically; just add your inner SVG elements.
+ * width is always 100% (responsive). height defaults to 340.
+ */
+interface Props {
+  title?: string;
+  height?: number;
+  caption?: string;
+}
+
+const { title, height = 340, caption } = Astro.props;
+---
+
+<figure class="diagram-figure">
+  {title && <div class="diagram-title">{title}</div>}
+  <div class="diagram-card">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox={`0 0 780 ${height}`}
+      width="100%"
+      aria-label={title ?? 'Diagram'}
+      role="img"
+    >
+      <!-- Card background — matches alexop.dev's rect card -->
+      <rect
+        width="780"
+        height={height}
+        rx="8"
+        class="diagram-bg"
+      />
+      <!-- User SVG content goes here -->
+      <slot />
+    </svg>
+  </div>
+  {caption && <figcaption class="diagram-caption">{caption}</figcaption>}
+</figure>
+
+<style>
+  .diagram-figure {
+    margin: 2rem 0;
+  }
+
+  .diagram-title {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--fg-dim);
+    margin-bottom: 0.6rem;
+  }
+
+  .diagram-card {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    background: var(--lightgray);
+  }
+
+  .diagram-card svg { display: block; }
+
+  /* The base card rect — equivalent to alexop.dev's
+     fill:rgb(var(--color-card));opacity:0.5 */
+  .diagram-bg {
+    fill: var(--lightgray);
+    opacity: 0.5;
+  }
+
+  .diagram-caption {
+    margin-top: 0.5rem;
+    font-size: 13px;
+    color: var(--fg-dim);
+    text-align: center;
+    font-style: italic;
+  }
+</style>

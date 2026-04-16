@@ -1,0 +1,82 @@
+---
+interface Props {
+  type?: 'info' | 'tip' | 'warning' | 'note';
+  title?: string;
+}
+
+const { type = 'info', title } = Astro.props;
+
+const config = {
+  info:    { icon: 'ℹ️', label: 'Info',    cls: 'callout-info'    },
+  tip:     { icon: '💡', label: 'Tip',     cls: 'callout-tip'     },
+  warning: { icon: '⚠️', label: 'Warning', cls: 'callout-warning' },
+  note:    { icon: '📝', label: 'Note',    cls: 'callout-note'    },
+};
+
+const { icon, label, cls } = config[type];
+const heading = title ?? label;
+---
+
+<aside class={`callout ${cls}`}>
+  <div class="callout-header">
+    <span class="callout-icon" aria-hidden="true">{icon}</span>
+    <span class="callout-title">{heading}</span>
+  </div>
+  <div class="callout-body">
+    <slot />
+  </div>
+</aside>
+
+<style>
+  .callout {
+    border-radius: 6px;
+    border: 1px solid;
+    padding: 1rem 1.25rem;
+    margin: 1.75rem 0;
+    font-size: 16px;
+  }
+
+  .callout-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .callout-icon { font-size: 15px; line-height: 1; }
+
+  .callout-title {
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .callout-body :global(p:last-child) { margin-bottom: 0; }
+  .callout-body :global(p) { margin-bottom: 0.5rem; }
+
+  /* ── Variants ── */
+  .callout-info {
+    background: rgba(99, 179, 237, 0.08);
+    border-color: rgba(99, 179, 237, 0.4);
+  }
+  .callout-info .callout-title { color: #63b3ed; }
+
+  .callout-tip {
+    background: rgba(104, 211, 145, 0.08);
+    border-color: rgba(104, 211, 145, 0.4);
+  }
+  .callout-tip .callout-title { color: #68d391; }
+
+  .callout-warning {
+    background: rgba(246, 173, 85, 0.08);
+    border-color: rgba(246, 173, 85, 0.4);
+  }
+  .callout-warning .callout-title { color: #f6ad55; }
+
+  .callout-note {
+    background: var(--highlight);
+    border-color: var(--border);
+  }
+  .callout-note .callout-title { color: var(--accent); }
+</style>
