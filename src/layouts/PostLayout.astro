@@ -18,6 +18,10 @@ const formattedDate = date.toLocaleDateString('it-IT', {
 ---
 
 <BaseLayout title={`${title} — edoardo ferrini`} description={description}>
+  <a href="/posts" class="back-link">
+    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+    Tutti i post
+  </a>
   <article class="prose">
     <h1>{title}</h1>
     <div class="post-meta">
@@ -25,7 +29,7 @@ const formattedDate = date.toLocaleDateString('it-IT', {
       {tags.length > 0 && (
         <div class="post-tags">
           {tags.map((tag) => (
-            <a href={`/tags/${tag}`} class="post-tag">#{tag}</a>
+            <a href={`/tags/${tag}`} class="post-tag">{tag}</a>
           ))}
         </div>
       )}

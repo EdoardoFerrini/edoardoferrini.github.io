@@ -29,7 +29,7 @@ function formatDate(date: Date) {
           {post.data.tags && post.data.tags.length > 0 && (
             <div class="post-tags">
               {post.data.tags.map((tag: string) => (
-                <a href={`/tags/${tag}`} class="post-tag">#{tag}</a>
+                <a href={`/tags/${tag}`} class="post-tag">{tag}</a>
               ))}
             </div>
           )}
