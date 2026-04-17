@@ -24,16 +24,7 @@ function formatDate(date: Date) {
   <ul class="post-list">
     {posts.map((post) => (
       <li class="post-item">
-        <div class="post-item-main">
-          <a href={`/posts/${post.id}`}>{post.data.title}</a>
-          {post.data.tags && post.data.tags.length > 0 && (
-            <div class="post-tags">
-              {post.data.tags.map((tag: string) => (
-                <a href={`/tags/${tag}`} class="post-tag">{tag}</a>
-              ))}
-            </div>
-          )}
-        </div>
+        <a href={`/posts/${post.id}`} class="post-item-title">{post.data.title}</a>
         <span class="post-date">{formatDate(post.data.date)}</span>
       </li>
     ))}
