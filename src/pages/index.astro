@@ -27,12 +27,17 @@ function formatDate(date: Date) {
 
 <BaseLayout title="edoardo ferrini — Build To Understand" description="Blog di Edoardo Ferrini: programmazione, knowledge management e fotografia.">
 
-  <!-- RSS / Stay Updated banner -->
-  <div class="rss-banner">
-    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1"/></svg>
-    <span>Ricevi aggiornamenti quando pubblico nuovi contenuti.</span>
-    <a href="/rss.xml" class="rss-link">Iscriviti via RSS →</a>
-  </div>
+  <!-- RSS / Stay Updated Card -->
+  <section class="card">
+    <div class="card-header">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1"/></svg>
+      <h3>Stay Updated</h3>
+    </div>
+    <div class="card-content">
+      <p>Ricevi aggiornamenti quando pubblico nuovi contenuti. No spam, solo bit.</p>
+      <a href="/rss.xml" class="card-action">Iscriviti via RSS →</a>
+    </div>
+  </section>
 
   <!-- Bio / Intro section — inspired by alexop.dev -->
   <div class="home-bio">
@@ -64,23 +69,28 @@ function formatDate(date: Date) {
     </ul>
   </section>
 
-  <!-- Tag cloud — inspired by alexop.dev -->
+  <!-- Tags Card -->
   {tags.length > 0 && (
-    <section class="home-section">
-      <div class="section-header">
-        <h2>Tags</h2>
-        <a href="/tags" class="view-all">Tutti i tag →</a>
+    <section class="card">
+      <div class="card-header">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+        <h3>Explore Tags</h3>
       </div>
-      <ul class="tag-cloud">
-        {tags.map(([tag, count]) => (
-          <li>
-            <a href={`/tags/${tag}`} class="tag-cloud-item">
-              <span class="tag-cloud-name">{tag}</span>
-              <span class="tag-cloud-count">({count})</span>
-            </a>
-          </li>
-        ))}
-      </ul>
+      <div class="card-content">
+        <ul class="tag-cloud">
+          {tags.map(([tag, count]) => (
+            <li>
+              <a href={`/tags/${tag}`} class="tag-cloud-item">
+                <span class="tag-cloud-name">{tag}</span>
+                <span class="tag-cloud-count">({count})</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+        <div style="margin-top: 1.5rem;">
+          <a href="/tags" class="card-action">Tutti i tag →</a>
+        </div>
+      </div>
     </section>
   )}
 

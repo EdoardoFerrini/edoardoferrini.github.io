@@ -281,36 +281,61 @@ p { margin-bottom: 1.25rem; }
   margin-bottom: 3rem;
 }
 
-/* ── RSS / Stay Updated banner ── */
-.rss-banner {
+/* ── Cards ── */
+.card {
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.card-header {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  padding: 0.65rem 1rem;
-  margin-bottom: 2rem;
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  background: var(--bg-alt);
-  font-size: 14px;
-  color: var(--fg-dim);
-  flex-wrap: wrap;
+  margin-bottom: 1rem;
 }
-.rss-banner svg {
+
+.card-header h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--dark);
+}
+
+.card-header svg {
   color: var(--accent);
   flex-shrink: 0;
 }
-.rss-banner span { flex: 1; }
-.rss-link {
-  font-size: 14px;
+
+.card-content p {
+  font-size: 16px;
+  color: var(--fg-dim);
+  margin-bottom: 1.25rem;
+  line-height: 1.6;
+}
+
+.card-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 15px;
+  font-weight: 600;
   color: var(--accent);
   text-decoration: none;
-  white-space: nowrap;
-  font-weight: 600;
 }
-.rss-link:hover {
-  text-decoration: underline;
-  text-underline-offset: 3px;
+
+.card-action:hover {
   color: var(--tertiary);
+  text-decoration: underline;
+  text-underline-offset: 4px;
 }
 
 /* ── Section header ── */
@@ -439,7 +464,7 @@ p { margin-bottom: 1.25rem; }
   align-items: baseline;
   gap: 0.3rem;
   color: var(--fg-dim);
-  font-size: 15px;
+  font-size: 17px;
   text-decoration: none;
   transition: color 0.15s;
 }
