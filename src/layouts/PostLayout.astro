@@ -1,14 +1,16 @@
 ---
 import BaseLayout from './BaseLayout.astro';
+import TableOfContents from '../components/TableOfContents.astro';
 
 interface Props {
   title: string;
   description?: string;
   date: Date;
   tags?: string[];
+  headings: { depth: number; slug: string; text: string }[];
 }
 
-const { title, description, date, tags = [] } = Astro.props;
+const { title, description, date, tags = [], headings } = Astro.props;
 
 const formattedDate = date.toLocaleDateString('it-IT', {
   year: 'numeric',
@@ -34,6 +36,7 @@ const formattedDate = date.toLocaleDateString('it-IT', {
         </div>
       )}
     </div>
+    <TableOfContents headings={headings} />
     <slot />
   </article>
 </BaseLayout>
