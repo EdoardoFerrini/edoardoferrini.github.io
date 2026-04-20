@@ -128,6 +128,11 @@ header {
   opacity: 0.85;
 }
 
+.blog-logo-icon {
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
 .site-logo-icon {
   color: var(--accent);
   flex-shrink: 0;
