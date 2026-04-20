@@ -1,0 +1,51 @@
+---
+// Search trigger component
+---
+
+<a href="/search" class="search-button" aria-label="Vai alla ricerca">
+  <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" class="search-icon">
+    <circle cx="11" cy="11" r="8"></circle>
+    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+  </svg>
+  <span class="search-kb-hint">⌘K</span>
+</a>
+
+<style is:global>
+  .search-button {
+    background: none;
+    border: none;
+    color: var(--fg-dim);
+    cursor: pointer;
+    padding: 6px 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-radius: 6px;
+    transition: all 0.15s ease;
+    border: 1px solid transparent;
+    text-decoration: none !important;
+  }
+
+  .search-button:hover {
+    color: var(--accent);
+    background: var(--highlight);
+    border-color: var(--border);
+    text-decoration: none !important;
+  }
+
+  .search-kb-hint {
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 5px;
+    background: var(--bg-alt);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    color: var(--fg-dim);
+    opacity: 0.7;
+  }
+
+  /* Keyboard hint inside the search button */
+  .search-button .search-kb-hint {
+    display: inline-block;
+  }
+</style>

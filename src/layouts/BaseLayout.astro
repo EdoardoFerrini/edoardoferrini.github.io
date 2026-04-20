@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import Search from '../components/Search.astro';
 
 interface Props {
   title: string;
@@ -104,8 +105,9 @@ function isActive(href: string, path: string, external: boolean) {
         <!-- Spacer -->
         <div class="nav-spacer" aria-hidden="true"></div>
 
-        <!-- Right: Dark mode toggle -->
+        <!-- Right: Search & Dark mode toggle -->
         <div class="nav-right">
+          <Search />
           <!-- Darkmode button — mirrors Quartz Darkmode.tsx -->
           <button id="theme-toggle" class="darkmode" aria-label="Cambia tema">
             <svg id="icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"
@@ -173,6 +175,14 @@ function isActive(href: string, path: string, external: boolean) {
         root.setAttribute('saved-theme', next);
         localStorage.setItem('theme', next);
         updateIcons();
+      });
+
+      // Global Search Shortcut (⌘K)
+      window.addEventListener('keydown', (e) => {
+        if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+          e.preventDefault();
+          window.location.href = '/search';
+        }
       });
     </script>
   </body>
