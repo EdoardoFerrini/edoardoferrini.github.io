@@ -622,11 +622,11 @@ p { margin-bottom: 1.25rem; }
   .nav-item-label { display: none; }
   .nav-item-link { padding: 6px 8px; }
   .nav-item-icon svg { width: 17px; height: 17px; }
+  .site-logo-text { display: none; }
 }
 
 @media (max-width: 500px) {
   .nav-inner { padding: 0 0.75rem; gap: 0.25rem; }
-  /* .site-logo-text { display: none; } */ /* Removed SVG logo, so keep text visible */
   .links-header { gap: 2px; margin-left: 0.25rem; }
   .nav-item-link { padding: 5px 6px; }
   .nav-item-icon svg { width: 19px; height: 19px; }
