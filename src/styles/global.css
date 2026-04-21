@@ -93,14 +93,14 @@ main {
    HEADER
    ════════════════════════════════════════ */
 header {
-  position: sticky;
-  top: 0;
+  position: relative;
   z-index: 100;
   background: color-mix(in srgb, var(--bg) 95%, transparent);
   backdrop-filter: blur(10px);
   max-width: 100%;
   box-sizing: border-box;
   overflow: hidden;
+  margin-top: 2rem;
 }
 
 .nav-inner {
@@ -624,6 +624,7 @@ p { margin-bottom: 1.25rem; }
 }
 
 @media (max-width: 500px) {
+  header { margin-top: 0; }
   .nav-inner { padding: 0 0.75rem; gap: 0.5rem; }
   .links-header { gap: 2px; }
   .nav-item-link { padding: 5px 6px; }
