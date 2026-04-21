@@ -100,7 +100,7 @@ header {
   max-width: 100%;
   box-sizing: border-box;
   overflow: hidden;
-  margin-top: 2rem;
+  margin-top: 4.8rem; /* Equivalent to Quartz's 96px */
 }
 
 .nav-inner {
