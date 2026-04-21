@@ -18,51 +18,31 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   </div>
 </BaseLayout>
 
-<script is:inline>
-  async function initPagefind() {
-    // Load Pagefind assets
-    try {
-      const link = document.createElement('link');
-      link.rel = 'stylesheet';
-      link.href = '/pagefind/pagefind-ui.css';
-      document.head.appendChild(link);
+<link rel="stylesheet" href="/pagefind/pagefind-ui.css" />
 
-      await new Promise((resolve, reject) => {
-        const script = document.createElement('script');
-        script.src = '/pagefind/pagefind-ui.js';
-        script.onload = resolve;
-        script.onerror = () => reject(new Error('Search index not found. Run "npm run build" first.'));
-        document.head.appendChild(script);
-      });
+<script>
+  import { PagefindUI } from '@pagefind/default-ui';
 
-      if (typeof PagefindUI !== 'undefined') {
-        new PagefindUI({ 
-          element: "#search", 
-          showSubResults: true,
-          showImages: false,
-          resetStyles: false,
-          translations: {
-            placeholder: "Cerca contenuti..."
-          },
-          autofocus: true
-        });
-        
-        // Ensure focus after initialization
-        setTimeout(() => {
-          const input = document.querySelector('.pagefind-ui__search-input');
-          if (input) input.focus();
-        }, 100);
-      }
-    } catch (err) {
-      console.error(err.message);
-      const searchDiv = document.getElementById('search');
-      if (searchDiv) {
-        searchDiv.innerHTML = `<p class="search-error">${err.message}</p>`;
-      }
-    }
+  function initPagefind() {
+    new PagefindUI({
+      element: '#search',
+      showSubResults: true,
+      showImages: false,
+      resetStyles: false,
+      translations: {
+        placeholder: 'Cerca contenuti...',
+      },
+      autofocus: true,
+    });
+
+    // Ensure focus after initialization
+    setTimeout(() => {
+      const input = document.querySelector('.pagefind-ui__search-input');
+      if (input) (input as HTMLInputElement).focus();
+    }, 100);
   }
 
-  // Run on load
+  // Support Astro view transitions
   document.addEventListener('astro:page-load', initPagefind);
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initPagefind);
