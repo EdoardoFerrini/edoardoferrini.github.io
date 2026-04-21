@@ -98,7 +98,6 @@ header {
   z-index: 100;
   background: color-mix(in srgb, var(--bg) 95%, transparent);
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--border);
   max-width: 100%;
   box-sizing: border-box;
   overflow: hidden;
