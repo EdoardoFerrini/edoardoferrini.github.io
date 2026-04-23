@@ -95,8 +95,7 @@ main {
 header {
   position: relative;
   z-index: 100;
-  background: color-mix(in srgb, var(--bg) 95%, transparent);
-  backdrop-filter: blur(10px);
+  background: var(--bg);
   max-width: 100%;
   box-sizing: border-box;
   overflow: hidden;
