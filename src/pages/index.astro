@@ -7,6 +7,7 @@ const posts = allPosts
   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
   .slice(0, 5);
 
+
 // Build tag cloud from all posts
 const tagMap = new Map<string, number>();
 for (const post of allPosts) {
@@ -59,11 +60,34 @@ function formatDate(date: Date) {
       <h2>Ultimi Post</h2>
       <a href="/posts" class="view-all">Tutti i post →</a>
     </div>
-    <ul class="post-list">
+    <ul class="post-grid">
       {posts.map((post) => (
-        <li class="post-item">
-          <a href={`/posts/${post.id}`} class="post-item-title">{post.data.title}</a>
-          <span class="post-date">{formatDate(post.data.date)}</span>
+        <li class="post-card-wrapper">
+          <article class="post-card">
+            {post.data.heroImage && (
+              <a href={`/posts/${post.id}`} class="post-card-image">
+                <img 
+                  src={post.data.heroImage} 
+                  alt={post.data.title} 
+                  loading="lazy"
+                />
+              </a>
+            )}
+            <div class="post-card-content">
+              <div class="post-card-meta">
+                <span>{formatDate(post.data.date)}</span>
+              </div>
+              <a href={`/posts/${post.id}`} class="post-card-title">
+                {post.data.title}
+              </a>
+              {post.data.description && (
+                <p class="post-card-description">{post.data.description}</p>
+              )}
+              <div class="post-card-footer">
+                Leggi di più →
+              </div>
+            </div>
+          </article>
         </li>
       ))}
     </ul>

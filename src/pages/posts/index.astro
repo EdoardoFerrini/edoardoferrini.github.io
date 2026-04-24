@@ -21,11 +21,40 @@ function formatDate(date: Date) {
     <p>{posts.length} {posts.length === 1 ? 'articolo' : 'articoli'}</p>
   </div>
 
-  <ul class="post-list">
+  <ul class="post-grid">
     {posts.map((post) => (
-      <li class="post-item">
-        <a href={`/posts/${post.id}`} class="post-item-title">{post.data.title}</a>
-        <span class="post-date">{formatDate(post.data.date)}</span>
+      <li class="post-card-wrapper">
+        <article class="post-card">
+          {post.data.heroImage && (
+            <a href={`/posts/${post.id}`} class="post-card-image">
+              <img 
+                src={post.data.heroImage} 
+                alt={post.data.title} 
+                loading="lazy"
+              />
+            </a>
+          )}
+          <div class="post-card-content">
+            <div class="post-card-meta">
+              <span>{formatDate(post.data.date)}</span>
+              {post.data.tags && post.data.tags.length > 0 && (
+                <>
+                  <span> • </span>
+                  <span>{post.data.tags[0]}</span>
+                </>
+              )}
+            </div>
+            <a href={`/posts/${post.id}`} class="post-card-title">
+              {post.data.title}
+            </a>
+            {post.data.description && (
+              <p class="post-card-description">{post.data.description}</p>
+            )}
+            <div class="post-card-footer">
+              Leggi di più →
+            </div>
+          </div>
+        </article>
       </li>
     ))}
   </ul>

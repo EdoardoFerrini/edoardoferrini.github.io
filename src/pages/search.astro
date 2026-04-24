@@ -89,7 +89,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   .search-page-footer {
     margin-top: 4rem;
     padding-top: 1.5rem;
-    border-top: 1px solid var(--border);
     display: flex;
     gap: 2rem;
     font-size: 13px;
@@ -103,7 +102,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     border-radius: 4px;
     font-family: inherit;
     font-weight: 600;
-    border: 1px solid var(--border);
     margin-right: 4px;
   }
 
@@ -113,7 +111,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     background: var(--highlight);
     border-radius: 8px;
     color: var(--accent);
-    border: 1px solid var(--border);
   }
 
   /* Pagefind UI Overrides */
@@ -124,11 +121,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
   .pagefind-ui__search-input {
     background: var(--bg-alt) !important;
-    border: 1px solid var(--border) !important;
     border-radius: 8px !important;
     font-size: 1.2rem !important;
     padding: 1rem 1.25rem !important;
     color: var(--fg) !important;
+    border: none !important;
   }
 
   .pagefind-ui__search-input:focus {
@@ -138,7 +135,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   }
 
   .pagefind-ui__result {
-    border-bottom: 1px solid var(--border) !important;
     padding: 1.5rem 0 !important;
   }
 
