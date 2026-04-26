@@ -44,6 +44,7 @@
 *, *::before, *::after {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 /* ── Base ── */
@@ -358,7 +359,7 @@ p { margin-bottom: 1.25rem; }
 /* ── Post List / Grid (Sliplane style) ── */
 .post-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
   gap: 2rem;
   padding: 0;
   list-style: none;
