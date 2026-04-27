@@ -3,7 +3,6 @@ title: "Benvenuto nel mio blog"
 description: "Il primo post del mio blog, costruito con Astro e ispirato al digital garden."
 date: 2025-09-01
 tags: ["meta", "astro"]
-heroImage: "/blog/welcome.png"
 ---
 
 Questo è il mio nuovo blog, costruito con **Astro** e stilisticamente ispirato al mio [digital garden](https://edoardoferrini.github.io/brain/).

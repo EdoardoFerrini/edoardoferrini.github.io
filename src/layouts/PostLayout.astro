@@ -9,11 +9,10 @@ interface Props {
   description?: string;
   date: Date;
   tags?: string[];
-  heroImage?: string;
   headings: { depth: number; slug: string; text: string }[];
 }
 
-const { title, description, date, tags = [], heroImage, headings } = Astro.props;
+const { title, description, date, tags = [], headings } = Astro.props;
 
 const formattedDate = date.toLocaleDateString('it-IT', {
   year: 'numeric',
@@ -29,11 +28,6 @@ const formattedDate = date.toLocaleDateString('it-IT', {
     Tutti i post
   </a>
   <article class="prose">
-    {heroImage && (
-      <div class="post-hero-image">
-        <img src={heroImage} alt={title} />
-      </div>
-    )}
     <h1>{title}</h1>
     <div class="post-meta">
       <time datetime={date.toISOString()}>{formattedDate}</time>

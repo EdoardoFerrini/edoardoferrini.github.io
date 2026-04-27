@@ -355,99 +355,54 @@ p { margin-bottom: 1.25rem; }
    POST LIST
    ════════════════════════════════════════ */
 
-/* ── Post List / Grid (Sliplane style) ── */
-.post-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
-  gap: 2rem;
-  padding: 0;
+/* ── Post List Minimal (Alexop style) ── */
+.post-list-minimal {
   list-style: none;
-  margin-top: 2rem;
+  padding: 0;
+  margin: 1.5rem 0;
 }
 
-.post-card {
+.post-item-minimal {
   display: flex;
-  flex-direction: column;
-  background: var(--bg-alt);
-  border-radius: 12px;
-  overflow: hidden;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  height: 100%;
+  align-items: baseline;
+  gap: 1.5rem;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--lightgray);
 }
 
-.post-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  border-color: var(--secondary);
+.post-item-minimal:last-child {
+  border-bottom: none;
 }
 
-.post-card-image {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  overflow: hidden;
-}
-
-.post-card-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-
-.post-card:hover .post-card-image img {
-  transform: scale(1.05);
-}
-
-.post-card-content {
-  padding: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-}
-
-.post-card-meta {
-  font-size: 12px;
-  color: var(--gray);
-  margin-bottom: 0.75rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.post-card-title {
-  font-size: 1.35rem;
-  font-weight: 700;
-  color: var(--dark);
-  margin-bottom: 0.75rem;
-  line-height: 1.3;
-  text-decoration: none;
-}
-
-.post-card-description {
-  font-size: 0.9rem;
-  color: var(--darkgray);
-  line-height: 1.6;
-  margin-bottom: 1.5rem;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  flex: 1;
-}
-
-.post-card-footer {
-  margin-top: auto;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+.post-date-minimal {
+  font-family: 'IBM Plex Mono', monospace;
   font-size: 14px;
-  color: var(--secondary);
-  font-weight: 600;
+  color: var(--gray);
+  min-width: 110px;
+  flex-shrink: 0;
 }
 
-@media (max-width: 640px) {
-  .post-grid {
-    grid-template-columns: 1fr;
+.post-title-minimal {
+  font-size: 19px;
+  font-weight: 500;
+  color: var(--dark);
+  text-decoration: none;
+  line-height: 1.4;
+  transition: color 0.15s ease;
+}
+
+.post-title-minimal:hover {
+  color: var(--accent);
+}
+
+@media (max-width: 600px) {
+  .post-item-minimal {
+    flex-direction: column;
+    gap: 0.25rem;
+    padding: 1rem 0;
+  }
+  .post-date-minimal {
+    min-width: auto;
   }
 }
 
@@ -640,7 +595,7 @@ p { margin-bottom: 1.25rem; }
   margin-bottom: 1.5rem;
 }
 .prose pre code { background: none; color: var(--fg); padding: 0; font-size: 16px; line-height: 1.65; }
-.prose table { width: 100%; border-collapse: collapse; margin-bottom: 1.5rem; font-size: 16px; }
+.prose table { width: 100%; margin-bottom: 1.5rem; font-size: 16px; }
 .prose th, .prose td { padding: 0.5rem 0.75rem; text-align: left; }
 .prose th { background: var(--lightgray); font-weight: 600; }
 .prose hr { border: none; margin: 2.5rem 0; height: 1px; background: var(--border); }

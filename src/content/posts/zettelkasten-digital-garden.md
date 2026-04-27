@@ -3,7 +3,6 @@ title: "Zettelkasten e digital garden: le differenze"
 description: "Come organizzo la conoscenza tra Zettelkasten, digital garden e blog."
 date: 2025-10-15
 tags: ["produttività", "zettelkasten", "pkm"]
-heroImage: "/blog/zettelkasten.png"
 ---
 
 Ho usato vari sistemi di gestione della conoscenza negli anni. Oggi uso una combinazione di **Zettelkasten** (in Obsidian), **digital garden** (pubblicato con Quartz) e questo blog.
