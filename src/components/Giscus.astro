@@ -21,10 +21,15 @@
 
 <script is:inline>
   (function () {
-    // Determine current theme
-    const theme = document.documentElement.getAttribute('data-theme') === 'light'
+    // Determine current theme URL
+    const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+    const baseUrl = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+      ? window.location.origin
+      : 'https://edoardoferrini.github.io';
+    
+    const theme = isLight 
       ? 'light'
-      : 'dark_dimmed';
+      : `${baseUrl}/giscus-dark.css`;
 
     const script = document.createElement('script');
     script.src = 'https://giscus.app/client.js';
@@ -47,9 +52,10 @@
 
     // Sync theme when the user toggles dark/light mode
     const observer = new MutationObserver(() => {
-      const newTheme = document.documentElement.getAttribute('data-theme') === 'light'
+      const isNowLight = document.documentElement.getAttribute('data-theme') === 'light';
+      const newTheme = isNowLight 
         ? 'light'
-        : 'dark_dimmed';
+        : `${baseUrl}/giscus-dark.css`;
 
       const iframe = document.querySelector('iframe.giscus-frame');
       if (iframe) {

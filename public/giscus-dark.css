@@ -1,0 +1,41 @@
+main {
+  --color-canvas-default: #1F1F28;
+  --color-canvas-next: #2A2A37;
+  --color-accent-fg: #FF5D62;
+  --color-accent-emphasis: #FF5D62;
+  --color-fg-default: #DCD7BA;
+  --color-fg-muted: #727169;
+  --color-fg-subtle: #727169;
+  --color-border-default: #2A2A37;
+  --color-border-muted: #2A2A37;
+  --color-neutral-muted: rgba(114, 113, 105, 0.2);
+  --color-btn-text: #DCD7BA;
+  --color-btn-bg: #2A2A37;
+  --color-btn-border: #727169;
+  --color-btn-hover-bg: #363646;
+  --color-btn-hover-border: #FF5D62;
+  --color-btn-active-bg: #2A2A37;
+  --color-btn-active-border: #FF5D62;
+  --color-btn-primary-text: #1F1F28;
+  --color-btn-primary-bg: #FF5D62;
+  --color-btn-primary-border: #FF5D62;
+  --color-btn-primary-hover-bg: #E46876;
+  --color-btn-primary-hover-border: #E46876;
+  --color-btn-primary-disabled-text: rgba(31, 31, 40, 0.5);
+  --color-btn-primary-disabled-bg: rgba(255, 93, 98, 0.5);
+  --color-btn-primary-disabled-border: rgba(255, 93, 98, 0.5);
+  --color-action-list-item-default-hover-bg: rgba(114, 113, 105, 0.2);
+}
+
+main .pagination-loader-container {
+  background-image: url("https://github.githubassets.com/images/modules/pulls/progressive-loader-dark.svg");
+}
+
+main .gsc-loading-image {
+  background-image: url("https://github.githubassets.com/images/spinners/octocat-spinner-128-dark.gif");
+}
+
+/* Font override */
+* {
+  font-family: 'IBM Plex Mono', 'Courier New', monospace !important;
+}
