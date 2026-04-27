@@ -2,6 +2,7 @@
 import BaseLayout from './BaseLayout.astro';
 import TableOfContents from '../components/TableOfContents.astro';
 import ReadingProgress from '../components/ReadingProgress.astro';
+import Giscus from '../components/Giscus.astro';
 
 interface Props {
   title: string;
@@ -48,4 +49,5 @@ const formattedDate = date.toLocaleDateString('it-IT', {
     <TableOfContents headings={headings} />
     <slot />
   </article>
+  <Giscus />
 </BaseLayout>
