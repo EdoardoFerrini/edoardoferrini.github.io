@@ -384,7 +384,6 @@ p { margin-bottom: 1.25rem; }
 
 .post-title-minimal {
   font-size: 19px;
-  font-weight: 500;
   color: var(--dark);
   text-decoration: none;
   line-height: 1.4;
