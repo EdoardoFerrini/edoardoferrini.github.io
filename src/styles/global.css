@@ -602,7 +602,6 @@ p { margin-bottom: 1.25rem; }
   max-width: 100%;
 }
 .prose .post-meta {
-  font-size: 15px;
   color: var(--fg-dim);
   margin-bottom: 2.5rem;
   display: flex;
