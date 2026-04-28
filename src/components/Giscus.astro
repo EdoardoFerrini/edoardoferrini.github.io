@@ -28,7 +28,7 @@
       : 'https://edoardoferrini.github.io';
     
     const theme = isLight 
-      ? 'light'
+      ? `${baseUrl}/giscus-light.css`
       : `${baseUrl}/giscus-dark.css`;
 
     const script = document.createElement('script');
@@ -54,7 +54,7 @@
     const observer = new MutationObserver(() => {
       const isNowLight = document.documentElement.getAttribute('data-theme') === 'light';
       const newTheme = isNowLight 
-        ? 'light'
+        ? `${baseUrl}/giscus-light.css`
         : `${baseUrl}/giscus-dark.css`;
 
       const iframe = document.querySelector('iframe.giscus-frame');
