@@ -1,0 +1,106 @@
+<!DOCTYPE html><html lang="it"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Come organizzo la conoscenza tra Zettelkasten, digital garden e blog."><title>Zettelkasten e digital garden: le differenze — edoardo ferrini</title><!-- IBM Plex Mono — same as Quartz config typography --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet"><!-- Anti-flash: apply saved theme before paint --><script>
+      (function () {
+        const saved = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const theme = saved ?? (prefersDark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+        document.documentElement.setAttribute('saved-theme', theme);
+      })();
+    </script><link rel="stylesheet" href="/_astro/BaseLayout.DLbb87EX.css">
+<style>.reading-progress-container[data-astro-cid-mu6cnre2]{position:fixed;top:0;left:0;width:100%;height:2px;background:transparent;z-index:200;pointer-events:none}.reading-progress-bar[data-astro-cid-mu6cnre2]{height:100%;width:0%;background:var(--accent);transition:width .1s ease-out;box-shadow:0 0 8px var(--accent)}.giscus-wrapper[data-astro-cid-an2nl7ar]{margin-top:4rem;padding-top:2rem;border-top:1px solid var(--border);max-width:68ch;margin-left:auto;margin-right:auto}.giscus-header[data-astro-cid-an2nl7ar]{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--accent);margin-bottom:1.5rem}.giscus-header[data-astro-cid-an2nl7ar] svg[data-astro-cid-an2nl7ar]{color:var(--accent)}.callout[data-astro-cid-mrmim4ef]{border-radius:6px;border:1px solid;padding:1rem 1.25rem;margin:1.75rem 0;font-size:16px}.callout-header[data-astro-cid-mrmim4ef]{display:flex;align-items:center;gap:.5rem;margin-bottom:.5rem}.callout-icon[data-astro-cid-mrmim4ef]{font-size:15px;line-height:1}.callout-title[data-astro-cid-mrmim4ef]{font-weight:700;font-size:14px;letter-spacing:.05em;text-transform:uppercase}.callout-body[data-astro-cid-mrmim4ef] p:last-child{margin-bottom:0}.callout-body[data-astro-cid-mrmim4ef] p{margin-bottom:.5rem}.callout-info[data-astro-cid-mrmim4ef]{background:#63b3ed14;border-color:#63b3ed66}.callout-info[data-astro-cid-mrmim4ef] .callout-title[data-astro-cid-mrmim4ef]{color:#63b3ed}.callout-tip[data-astro-cid-mrmim4ef]{background:#68d39114;border-color:#68d39166}.callout-tip[data-astro-cid-mrmim4ef] .callout-title[data-astro-cid-mrmim4ef]{color:#68d391}.callout-warning[data-astro-cid-mrmim4ef]{background:#f6ad5514;border-color:#f6ad5566}.callout-warning[data-astro-cid-mrmim4ef] .callout-title[data-astro-cid-mrmim4ef]{color:#f6ad55}.callout-note[data-astro-cid-mrmim4ef]{background:var(--highlight);border-color:var(--border)}.callout-note[data-astro-cid-mrmim4ef] .callout-title[data-astro-cid-mrmim4ef]{color:var(--accent)}.diagram-figure[data-astro-cid-uwvadgfv]{margin:2rem 0}.diagram-title[data-astro-cid-uwvadgfv]{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--fg-dim);margin-bottom:.6rem}.diagram-card[data-astro-cid-uwvadgfv]{border:1px solid var(--border);border-radius:8px;overflow:hidden;background:var(--lightgray)}.diagram-card[data-astro-cid-uwvadgfv] svg[data-astro-cid-uwvadgfv]{display:block}.diagram-bg[data-astro-cid-uwvadgfv]{fill:var(--lightgray);opacity:.5}.diagram-caption[data-astro-cid-uwvadgfv]{margin-top:.5rem;font-size:13px;color:var(--fg-dim);text-align:center;font-style:italic}.steps-list[data-astro-cid-cx7gdanv]{counter-reset:steps;list-style:none;padding:0;margin:2.5rem 0}.steps-list[data-astro-cid-cx7gdanv] li{counter-increment:steps;position:relative;padding-left:3rem;padding-bottom:2rem}.steps-list[data-astro-cid-cx7gdanv] li:before{content:counter(steps);position:absolute;left:0;top:0;width:28px;height:28px;border-radius:50%;background:var(--bg-dim);border:2px solid var(--accent);color:var(--accent);font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center;z-index:2}.steps-list[data-astro-cid-cx7gdanv] li:not(:last-child):after{content:"";position:absolute;left:13px;top:28px;bottom:0;width:2px;background:var(--border);opacity:.3;z-index:1}.steps-list[data-astro-cid-cx7gdanv] li>*{margin:0}.steps-list[data-astro-cid-cx7gdanv] li p{line-height:1.6;color:var(--fg-dim)}.steps-list[data-astro-cid-cx7gdanv] li strong{color:var(--fg);display:inline-block;margin-bottom:.25rem}.steps-list[data-astro-cid-cx7gdanv] li code{background:var(--highlight);color:var(--accent);padding:.1rem .3rem;border-radius:4px;font-size:.9em}
+</style></head> <body> <!-- ════════════════════════════════
+         HEADER — mirrors Quartz .page-header
+         ════════════════════════════════ --> <header> <nav class="nav-inner" aria-label="Navigazione principale"> <!-- Logo: site name --> <a href="/" class="brain-logo" aria-label="Home"> <svg class="blog-logo-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"> <rect width="20" height="16" x="2" y="4" rx="2"></rect> <path d="M6 9l4 3-4 3"></path> <path d="M13 15h4"></path> </svg> <span class="site-logo-text">Lost in Logs</span> </a> <!-- Nav links — mirrors LinksHeader.tsx --> <div class="links-header"> <a href="/posts" class="nav-item-link" aria-current="page"> <span class="nav-item-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></span> <span class="nav-item-label">Posts</span> </a><a href="/tags" class="nav-item-link"> <span class="nav-item-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg></span> <span class="nav-item-label">Tags</span> </a><a href="https://edoardoferrini.github.io/brain/" class="nav-item-link"> <span class="nav-item-icon" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/><path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/><path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4"/><path d="M17.599 6.5a3 3 0 0 0 .399-1.375"/><path d="M6.003 5.125A3 3 0 0 0 6.401 6.5"/><path d="M3.477 10.896a4 4 0 0 1 .585-.396"/><path d="M19.938 10.5a4 4 0 0 1 .585.396"/><path d="M6 18a4 4 0 0 1-1.967-.516"/><path d="M19.967 17.484A4 4 0 0 1 18 18"/></svg></span> <span class="nav-item-label">Brain</span> </a><a href="/about" class="nav-item-link"> <span class="nav-item-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span> <span class="nav-item-label">About</span> </a> </div> <!-- Spacer --> <div class="nav-spacer" aria-hidden="true"></div> <!-- Right: Search & Dark mode toggle --> <div class="nav-right"> <a href="/search" class="search-button" aria-label="Vai alla ricerca"> <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" class="search-icon"> <circle cx="11" cy="11" r="8"></circle> <line x1="21" y1="21" x2="16.65" y2="16.65"></line> </svg> <span class="search-kb-hint">⌘K</span> </a> <!-- Darkmode button — mirrors Quartz Darkmode.tsx --> <button id="theme-toggle" class="darkmode" aria-label="Cambia tema"> <svg id="icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"> <circle cx="12" cy="12" r="5"></circle> <line x1="12" y1="1" x2="12" y2="3"></line> <line x1="12" y1="21" x2="12" y2="23"></line> <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line> <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line> <line x1="1" y1="12" x2="3" y2="12"></line> <line x1="21" y1="12" x2="23" y2="12"></line> <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line> <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line> </svg> <svg id="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"> <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path> </svg> </button> </div> </nav> </header> <main> <div class="container">  <div id="reading-progress-container" class="reading-progress-container" data-astro-cid-mu6cnre2> <div id="reading-progress-bar" class="reading-progress-bar" data-astro-cid-mu6cnre2></div> </div>  <script type="module">function r(){const e=document.getElementById("reading-progress-bar");if(!e)return;function t(){const s=window.scrollY,n=document.documentElement.scrollHeight-window.innerHeight;if(n<=0){e.style.width="0%";return}const o=s/n*100;e.style.width=`${Math.min(100,Math.max(0,o))}%`}window.addEventListener("scroll",t,{passive:!0}),window.addEventListener("resize",t),t()}document.addEventListener("astro:page-load",r);r();</script> <a href="/posts" class="back-link"> <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"></polyline></svg>
+Tutti i post
+</a> <article class="prose"> <h1>Zettelkasten e digital garden: le differenze</h1> <div class="post-meta"> <time datetime="2025-10-15T00:00:00.000Z">15 ottobre 2025</time> <div class="post-tags"> <a href="/tags/produttività" class="post-tag">produttività</a><a href="/tags/zettelkasten" class="post-tag">zettelkasten</a><a href="/tags/pkm" class="post-tag">pkm</a> </div> </div> <p class="post-lead">Come organizzo la conoscenza tra Zettelkasten, digital garden e blog.</p> <nav class="toc" aria-labelledby="toc-label"> <div class="toc-header"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg> <span id="toc-label">Indice</span> </div> <ul> <li class="depth-2"> <a href="#il-problema"> Il problema </a> </li><li class="depth-2"> <a href="#zettelkasten"> Zettelkasten </a> </li><li class="depth-2"> <a href="#digital-garden-vs-blog"> Digital garden vs blog </a> </li><li class="depth-2"> <a href="#il-mio-flusso"> Il mio flusso </a> </li> </ul> </nav>  <p>Ho usato vari sistemi di gestione della conoscenza negli anni. Oggi uso una combinazione di <strong>Zettelkasten</strong> (in Obsidian), <strong>digital garden</strong> (pubblicato con Quartz) e questo blog.</p>
+<h2 id="il-problema">Il problema</h2>
+<p>Accumulare informazioni è facile. Renderle <em>utili</em> è difficile.</p>
+<h2 id="zettelkasten">Zettelkasten</h2>
+<p>Il metodo Zettelkasten — sviluppato da Niklas Luhmann — consiste nel creare note atomiche connesse tra loro. Ogni nota ha un ID, un’idea centrale, e link ad altre note.</p>
+<p>Il risultato è una rete di concetti che si auto-organizza nel tempo.</p>
+<h2 id="digital-garden-vs-blog">Digital garden vs blog</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th></th><th>Digital garden</th><th>Blog</th></tr></thead><tbody><tr><td>Formato</td><td>Note brevi, collegate</td><td>Articoli completi</td></tr><tr><td>Stato</td><td>Sempre in evoluzione</td><td>Pubblicato e definitivo</td></tr><tr><td>Navigazione</td><td>Non lineare</td><td>Cronologica</td></tr></tbody></table>
+<h2 id="il-mio-flusso">Il mio flusso</h2>
+<ol>
+<li>Appunti veloci → Obsidian</li>
+<li>Note elaborate → Digital garden (Quartz)</li>
+<li>Riflessioni complete → Blog</li>
+</ol>
+<p>Ogni livello ha il suo scopo. Nessuno sostituisce l’altro.</p>  </article> <section class="giscus-wrapper" id="comments" data-astro-cid-an2nl7ar> <div class="giscus-header" data-astro-cid-an2nl7ar> <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-astro-cid-an2nl7ar> <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" data-astro-cid-an2nl7ar></path> </svg> <span data-astro-cid-an2nl7ar>Commenti</span> </div> <div class="giscus" data-astro-cid-an2nl7ar></div> </section> <script>
+  (function () {
+    // Determine current theme URL
+    const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+    const baseUrl = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+      ? window.location.origin
+      : 'https://edoardoferrini.github.io';
+    
+    const theme = isLight 
+      ? `${baseUrl}/giscus-light.css`
+      : `${baseUrl}/giscus-dark.css`;
+
+    const script = document.createElement('script');
+    script.src = 'https://giscus.app/client.js';
+    script.setAttribute('data-repo', 'EdoardoFerrini/edoardoferrini.github.io');
+    script.setAttribute('data-repo-id', 'R_kgDOSAxMyw');
+    script.setAttribute('data-category', 'Announcements');
+    script.setAttribute('data-category-id', 'DIC_kwDOSAxMy84C7x5q');
+    script.setAttribute('data-mapping', 'pathname');
+    script.setAttribute('data-strict', '0');
+    script.setAttribute('data-reactions-enabled', '1');
+    script.setAttribute('data-emit-metadata', '0');
+    script.setAttribute('data-input-position', 'bottom');
+    script.setAttribute('data-theme', theme);
+    script.setAttribute('data-lang', 'it');
+    script.setAttribute('data-loading', 'lazy');
+    script.crossOrigin = 'anonymous';
+    script.async = true;
+
+    document.querySelector('.giscus').appendChild(script);
+
+    // Sync theme when the user toggles dark/light mode
+    const observer = new MutationObserver(() => {
+      const isNowLight = document.documentElement.getAttribute('data-theme') === 'light';
+      const newTheme = isNowLight 
+        ? `${baseUrl}/giscus-light.css`
+        : `${baseUrl}/giscus-dark.css`;
+
+      const iframe = document.querySelector('iframe.giscus-frame');
+      if (iframe) {
+        iframe.contentWindow.postMessage(
+          { giscus: { setConfig: { theme: newTheme } } },
+          'https://giscus.app'
+        );
+      }
+    });
+
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ['data-theme'],
+    });
+  })();
+</script>  </div> </main> <!-- Footer — mirrors Quartz Footer.tsx structure --> <footer> <div class="container"> <div class="footer-inner"> <span>© 2026 Edoardo Ferrini</span> <div class="footer-links"> <a href="https://edoardoferrini.github.io/brain/">Second Brain</a> <a href="/posts">Posts</a> <a href="/tags">Tags</a> <a href="/about">About</a> </div> </div> </div> </footer> <script type="module">const o=document.getElementById("theme-toggle"),c=document.getElementById("icon-sun"),d=document.getElementById("icon-moon"),e=document.documentElement;function n(){const t=e.getAttribute("data-theme")!=="light";c.style.display=t?"block":"none",d.style.display=t?"none":"block"}n();o.addEventListener("click",()=>{const t=e.getAttribute("data-theme")==="light"?"dark":"light";e.setAttribute("data-theme",t),e.setAttribute("saved-theme",t),localStorage.setItem("theme",t),n()});window.addEventListener("keydown",t=>{(t.ctrlKey||t.metaKey)&&t.key==="k"&&(t.preventDefault(),window.location.href="/search")});</script> </body> </html>
