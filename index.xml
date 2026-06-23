@@ -1,50 +1,56 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <rss version="2.0">
     <channel>
-      <title>Quartz 5</title>
+      <title>Edoardo Ferrini</title>
       <link>https://edoardoferrini.github.io</link>
-      <description>Last 10 notes on Quartz 5</description>
+      <description>Last 10 notes on Edoardo Ferrini</description>
       <generator>Quartz -- quartz.jzhao.xyz</generator>
       <item>
     <title>test</title>
     <link>https://edoardoferrini.github.io/tags/test</link>
     <guid>https://edoardoferrini.github.io/tags/test</guid>
     <description><![CDATA[  ]]></description>
-    <pubDate>Tue, 23 Jun 2026 07:41:16 GMT</pubDate>
+    <pubDate>Tue, 23 Jun 2026 15:09:46 GMT</pubDate>
   </item><item>
     <title>prova</title>
     <link>https://edoardoferrini.github.io/tags/prova</link>
     <guid>https://edoardoferrini.github.io/tags/prova</guid>
     <description><![CDATA[  ]]></description>
-    <pubDate>Tue, 23 Jun 2026 07:41:16 GMT</pubDate>
+    <pubDate>Tue, 23 Jun 2026 15:09:46 GMT</pubDate>
   </item><item>
-    <title>Tag Index</title>
+    <title>Tags</title>
     <link>https://edoardoferrini.github.io/tags/</link>
     <guid>https://edoardoferrini.github.io/tags/</guid>
     <description><![CDATA[  ]]></description>
-    <pubDate>Tue, 23 Jun 2026 07:41:16 GMT</pubDate>
+    <pubDate>Tue, 23 Jun 2026 15:09:46 GMT</pubDate>
   </item><item>
-    <title>Welcome to Quartz</title>
+    <title>Home</title>
     <link>https://edoardoferrini.github.io/</link>
     <guid>https://edoardoferrini.github.io/</guid>
-    <description><![CDATA[ Ciao a tutti sono Edoardo Ferrini, uno sviluppatore full stack. ]]></description>
-    <pubDate>Tue, 23 Jun 2026 07:40:25 GMT</pubDate>
+    <description><![CDATA[ Ciao! Sono Edoardo Ferrini, uno sviluppatore full stack appassionato di tecnologia, sviluppo software e condivisione di conoscenza. ]]></description>
+    <pubDate>Tue, 23 Jun 2026 15:08:49 GMT</pubDate>
+  </item><item>
+    <title>Posts</title>
+    <link>https://edoardoferrini.github.io/posts/</link>
+    <guid>https://edoardoferrini.github.io/posts/</guid>
+    <description><![CDATA[ Tutti gli articoli del blog ]]></description>
+    <pubDate>Tue, 23 Jun 2026 15:08:49 GMT</pubDate>
   </item><item>
     <title>Secondo</title>
-    <link>https://edoardoferrini.github.io/secondo-post</link>
-    <guid>https://edoardoferrini.github.io/secondo-post</guid>
+    <link>https://edoardoferrini.github.io/posts/secondo-post</link>
+    <guid>https://edoardoferrini.github.io/posts/secondo-post</guid>
     <description><![CDATA[ Questo è il mio primo post sul blog!. ]]></description>
     <pubDate>Tue, 16 Jun 2026 00:00:00 GMT</pubDate>
   </item><item>
     <title>Terzo</title>
-    <link>https://edoardoferrini.github.io/terzo-post</link>
-    <guid>https://edoardoferrini.github.io/terzo-post</guid>
+    <link>https://edoardoferrini.github.io/posts/terzo-post</link>
+    <guid>https://edoardoferrini.github.io/posts/terzo-post</guid>
     <description><![CDATA[ Questo è il mio terzo post sul blog!. ]]></description>
     <pubDate>Tue, 16 Jun 2026 00:00:00 GMT</pubDate>
   </item><item>
     <title>Primo Post</title>
-    <link>https://edoardoferrini.github.io/primo-post</link>
-    <guid>https://edoardoferrini.github.io/primo-post</guid>
+    <link>https://edoardoferrini.github.io/posts/primo-post</link>
+    <guid>https://edoardoferrini.github.io/posts/primo-post</guid>
     <description><![CDATA[ Questo è il mio primo post sul blog!. ]]></description>
     <pubDate>Mon, 15 Jun 2026 00:00:00 GMT</pubDate>
   </item>
