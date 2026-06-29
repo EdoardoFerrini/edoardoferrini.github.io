@@ -100,8 +100,8 @@ main {
   --color-social-reaction-bg-reacted-hover: var(--color-scale-blue-1);
 }
 
-main, main .gsc-comment-box, main .gsc-comment, main .gsc-reply-box {
-  font-family: var(--font-family);
+main * {
+  font-family: var(--font-family) !important;
 }
 
 main .pagination-loader-container {

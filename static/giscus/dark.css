@@ -3,15 +3,6 @@
  * https://github.com/primer/primitives/blob/main/LICENSE
  */
 
-@font-face {
-  font-family: "SimSun";
-  src: local("SimSun"),
-       url("https://edoardoferrini.github.io/static/fonts/SimSun.ttf") format("truetype");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
 main {
   --font-family: "SimSun", "Source Sans Pro", ui-sans-serif, system-ui, sans-serif;
   --color-prettylights-syntax-comment: #8b949e;
@@ -100,7 +91,11 @@ main {
   --color-social-reaction-bg-reacted-hover: var(--color-scale-blue-8);
 }
 
-main, main .gsc-comment-box, main .gsc-comment, main .gsc-reply-box {
+main .gsc-comment-box textarea,
+main .gsc-comment,
+main .gsc-reply-box,
+main .gsc-header,
+main .gsc-comment-box-tabs {
   font-family: var(--font-family);
 }
 
