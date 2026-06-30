@@ -6,7 +6,7 @@
 @font-face {
   font-family: "SimSun";
   src: local("SimSun"),
-       url("https://edoardoferrini.github.io/static/fonts/SimSun.ttf") format("truetype");
+       url("../fonts/SimSun.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
