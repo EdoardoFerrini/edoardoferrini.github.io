@@ -1,0 +1,1 @@
+@layer quartz-base{body[data-slug^=tags] .page-header .article-title{display:none}}
