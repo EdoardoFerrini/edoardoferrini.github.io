@@ -6,65 +6,35 @@
       <description>Last 10 notes on Aporia</description>
       <generator>Quartz -- quartz.jzhao.xyz</generator>
       <item>
-    <title>test</title>
-    <link>https://edoardoferrini.github.io/tags/test</link>
-    <guid>https://edoardoferrini.github.io/tags/test</guid>
-    <description><![CDATA[  ]]></description>
-    <pubDate>Tue, 18 Aug 2026 10:10:39 GMT</pubDate>
-  </item><item>
     <title>customization</title>
     <link>https://edoardoferrini.github.io/tags/customization</link>
     <guid>https://edoardoferrini.github.io/tags/customization</guid>
     <description><![CDATA[  ]]></description>
-    <pubDate>Tue, 18 Aug 2026 10:10:39 GMT</pubDate>
-  </item><item>
-    <title>prova</title>
-    <link>https://edoardoferrini.github.io/tags/prova</link>
-    <guid>https://edoardoferrini.github.io/tags/prova</guid>
-    <description><![CDATA[  ]]></description>
-    <pubDate>Tue, 18 Aug 2026 10:10:39 GMT</pubDate>
+    <pubDate>Thu, 03 Sep 2026 07:52:17 GMT</pubDate>
   </item><item>
     <title>Tags</title>
     <link>https://edoardoferrini.github.io/tags/</link>
     <guid>https://edoardoferrini.github.io/tags/</guid>
     <description><![CDATA[  ]]></description>
-    <pubDate>Tue, 18 Aug 2026 10:10:39 GMT</pubDate>
+    <pubDate>Thu, 03 Sep 2026 07:52:17 GMT</pubDate>
   </item><item>
     <title>Home</title>
     <link>https://edoardoferrini.github.io/</link>
     <guid>https://edoardoferrini.github.io/</guid>
     <description><![CDATA[ Benvenuto nel mio blog — uno spazio dove raccolgo appunti, riflessioni e guide tecniche su programmazione, strumenti e molto altro. ]]></description>
-    <pubDate>Tue, 18 Aug 2026 09:45:16 GMT</pubDate>
+    <pubDate>Thu, 03 Sep 2026 07:45:50 GMT</pubDate>
   </item><item>
     <title>Posts</title>
     <link>https://edoardoferrini.github.io/posts/</link>
     <guid>https://edoardoferrini.github.io/posts/</guid>
-    <description><![CDATA[ Tutti gli articoli del blog ]]></description>
-    <pubDate>Tue, 18 Aug 2026 09:45:16 GMT</pubDate>
+    <description><![CDATA[ Tutti i post del blog. ]]></description>
+    <pubDate>Thu, 03 Sep 2026 07:45:50 GMT</pubDate>
   </item><item>
-    <title>Quinto</title>
-    <link>https://edoardoferrini.github.io/posts/quinto-post</link>
-    <guid>https://edoardoferrini.github.io/posts/quinto-post</guid>
-    <description><![CDATA[ Test header Questo documento descrive tutte le modifiche e i plugin custom realizzati per trasformare Quartz 5.0 in un blog funzionante con elenco post, tag e integrazioni social. ]]></description>
-    <pubDate>Mon, 29 Jun 2026 00:00:00 GMT</pubDate>
-  </item><item>
-    <title>Quarto</title>
-    <link>https://edoardoferrini.github.io/posts/quarto-post</link>
-    <guid>https://edoardoferrini.github.io/posts/quarto-post</guid>
-    <description><![CDATA[ Personalizzazioni Blog — Quartz 5.0 Questo documento descrive tutte le modifiche e i plugin custom realizzati per trasformare Quartz 5.0 in un blog funzionante con elenco post, tag e integrazioni social. ]]></description>
-    <pubDate>Sat, 20 Jun 2026 00:00:00 GMT</pubDate>
-  </item><item>
-    <title>Secondo</title>
-    <link>https://edoardoferrini.github.io/posts/secondo-post</link>
-    <guid>https://edoardoferrini.github.io/posts/secondo-post</guid>
-    <description><![CDATA[ Questo è il mio secondo post sul blog! Collegamenti: Primo Post · Terzo · Quarto. ]]></description>
-    <pubDate>Tue, 16 Jun 2026 00:00:00 GMT</pubDate>
-  </item><item>
-    <title>Terzo</title>
-    <link>https://edoardoferrini.github.io/posts/terzo-post</link>
-    <guid>https://edoardoferrini.github.io/posts/terzo-post</guid>
-    <description><![CDATA[ Questo è il mio terzo post sul blog! Collegamenti: Primo Post · Secondo · Quarto. ]]></description>
-    <pubDate>Tue, 16 Jun 2026 00:00:00 GMT</pubDate>
+    <title>GitHub Pages da repository privato: la guida</title>
+    <link>https://edoardoferrini.github.io/posts/github-pages</link>
+    <guid>https://edoardoferrini.github.io/posts/github-pages</guid>
+    <description><![CDATA[ Oggi vediamo come configurare un workflow per fare il deploy su GitHub Pages quando il nostro codice sorgente si trova in un repository privato, aggirando il limite dei repository privati sulle versioni gratuite di GitHub. ]]></description>
+    <pubDate>Sun, 10 May 2026 00:00:00 GMT</pubDate>
   </item>
     </channel>
   </rss>
