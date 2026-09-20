@@ -8,4 +8,4 @@ await Promise.all([
   import("./static/scripts/script-6-be15df42.js"),
   import("./static/scripts/script-7-a2f22c29.js")
 ]);
-await import("./static/scripts/script-8-d93af9ba.js");
+await import("./static/scripts/script-8-4a1444dc.js");
